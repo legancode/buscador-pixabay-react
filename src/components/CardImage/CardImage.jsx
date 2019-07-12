@@ -2,7 +2,7 @@ import React from 'react'
 
 const CardImage = ({ key, image, tags }) => {
     return (
-        <div key={key} className="card text-white bg-success">
+        <div key={key} className="col-md-3 card text-white bg-success">
             <img className="card-header" src={image} alt={tags} />
             <div className="card-body">
                 <h5 className="card-title">Likes: 200</h5>
