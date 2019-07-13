@@ -1,0 +1,44 @@
+.results{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    
+}
+/* .card{
+
+} */
+.card-image{
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+    padding-top:1rem;
+    padding-bottom: 1rem;
+}
+
+.card-body{
+    display: flex;
+    padding: .5rem;
+    flex-direction: column;
+}
+
+.card-title{
+    font-family: sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px auto 30px auto;
+}
+
+.back, .next{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}

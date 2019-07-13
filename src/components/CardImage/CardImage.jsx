@@ -1,13 +1,13 @@
 import React from 'react'
 
-const CardImage = ({ key, image, tags }) => {
+const CardImage = ({ image, fullImage, tags, likes, views }) => {
     return (
-        <div key={key} className="col-md-3 card text-white bg-success">
-            <img className="card-header" src={image} alt={tags} />
-            <div className="card-body">
-                <h5 className="card-title">Likes: 200</h5>
-                <h5 className="card-title">Views: 500</h5>
-                <a href="#" className="btn btn-primary">Ver imagen</a>
+        <div className="card bg-dark border-primary">
+            <img className="card-image" src={image} alt={tags} />
+            <div className="card-body bg-primary">
+                <h5 className="card-title">Likes: {views}</h5>
+                <h5 className="card-title">Views: {likes}</h5>
+                <a href={fullImage} target="_blank" className="btn btn-info">Descargar imagen</a>
             </div>
         </div>
     )
