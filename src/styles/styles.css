@@ -1,3 +1,6 @@
+/* *{
+    outline: 1px solid red;
+} */
 .results{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -7,6 +10,14 @@
     margin-right: auto;
     margin-bottom: 10px;
     
+}
+/* Media query momentaneo para arreglo en moviles */
+@media screen and (max-width:321px){
+    .results{
+        margin:0;
+        padding:0;
+        grid-template-columns: 100%;
+    }
 }
 /* .card{
 
@@ -41,4 +52,9 @@
 .back, .next{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+}
+
+.no-results{
+    margin: 0 auto;
+    margin-bottom: 25px;
 }

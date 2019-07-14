@@ -58,8 +58,12 @@ class Centralizer extends React.Component {
   nextPage = () => {
     //capturar el page
     let actualPage = this.state.page
+
+    //Detener ejecucion si trae resultados vacios
+    if (this.state.status === 200 && this.state.images <= 0) return null
     //Detener ejecucion si llega a ultima pagina
     if (this.state.status === 400) return null
+
     //aumentar en 1
     actualPage++
     //cambiar el page y hacer peticion
@@ -72,7 +76,7 @@ class Centralizer extends React.Component {
     return (
       <>
         <div className="container jumbotron">
-          <h1>Buscador de imagenes</h1>
+          <h1 className="text-center mb-3">Buscador de imagenes v1.0.0</h1>
           <Searcher handleDates={this.handleDates} />
         </div>
         <Results
