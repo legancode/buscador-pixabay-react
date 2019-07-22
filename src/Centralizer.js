@@ -72,12 +72,36 @@ class Centralizer extends React.Component {
     }, () => { this.handleFetch() })
   }
 
+  componentDidMount() {
+    const header = document.getElementById('header'),
+      searcher = document.getElementById('searcher-box'),
+
+      positionSearcher = searcher.offsetTop - searcher.offsetHeight
+
+    const searcherfixed = () => {
+      if (window.scrollY >= positionSearcher) {
+        return (
+          header.style.paddingTop = `${searcher.offsetHeight}px`,
+          searcher.classList.add('searcher-fixed')
+
+        )
+      }
+      header.style.paddingTop = 0
+      searcher.classList.remove('searcher-fixed')
+
+    }
+
+    document.addEventListener('scroll', searcherfixed)
+  }
+
   render() {
     return (
       <>
-        <div className="container jumbotron">
-          <h1 className="text-center mb-3">Buscador de imagenes v1.0.0</h1>
-          <Searcher handleDates={this.handleDates} />
+        <div className="container jumbotron" id="header">
+          <h1 className="text-center mt-3">Buscador de imagenes v1.0.0</h1>
+          <div className="searcher-box" id="searcher-box">
+            <Searcher handleDates={this.handleDates} />
+          </div>
         </div>
         <Results
 

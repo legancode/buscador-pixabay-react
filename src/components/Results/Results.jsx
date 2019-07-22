@@ -35,7 +35,7 @@ class Results extends React.Component {
                         //2. si es verdad: Mostrar "No hay mas resultados" 
                         ? <p className="no-results display-4 text-center">No hay mas resultados :(</p>
                         //3. De lo contrario: continuar mostrando resultados
-                        : <div className="container row results">
+                        : <div className="container results ">
                             {images.map(image => (
                                 <CardImage
 
